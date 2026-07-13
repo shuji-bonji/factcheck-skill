@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/plugin.schema.json",
+  "name": "factcheck",
+  "version": "0.1.0",
+  "description": "情報の信頼性を科学的・体系的に評価するファクトチェック Skill。20項目×4カテゴリの評価フレームワークで記事・URL・主張・LLM 回答をスコアリングし、独立 sub-agent による自己評価バイアス排除を行う。",
+  "author": {
+    "name": "shuji-bonji",
+    "email": "bonji@mikuro.jp",
+    "url": "https://github.com/shuji-bonji"
+  },
+  "homepage": "https://github.com/shuji-bonji/factcheck-skill",
+  "repository": "https://github.com/shuji-bonji/factcheck-skill",
+  "license": "MIT",
+  "keywords": [
+    "factcheck",
+    "verification",
+    "reliability",
+    "skill",
+    "media",
+    "research"
+  ]
+}

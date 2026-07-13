@@ -10,20 +10,32 @@
 
 ```
 factcheck-skill/
-├── SKILL.md              # メインのスキル定義（20項目の評価基準含む）
-├── agents/
-│   └── fact-checker.md   # ファクトチェック専門サブエージェント定義
+├── .claude-plugin/
+│   └── plugin.json           # Plugin manifest（marketplace form factor）
+├── skills/
+│   └── factcheck/
+│       ├── SKILL.md          # メインのスキル定義（20項目の評価基準含む）
+│       └── agents/
+│           └── fact-checker.md   # ファクトチェック専門サブエージェント定義
 └── README.md
 ```
 
 ## 使い方
 
-### Cowork / Claude Code でスキルとして使う
-
-1. このリポジトリ（またはディレクトリ）を `.claude/skills/` 配下にコピーする:
+### Plugin としてインストール（推奨）
 
 ```bash
-cp -r factcheck-skill ~/.claude/skills/
+/plugin marketplace add shuji-bonji/claude-plugins
+/plugin install factcheck@shuji-bonji
+```
+
+### 手動でスキルとして使う（Cowork / Claude Code）
+
+1. Skill 本体（`skills/factcheck/`）を `~/.claude/skills/` 配下にコピーする:
+
+```bash
+git clone https://github.com/shuji-bonji/factcheck-skill
+cp -r factcheck-skill/skills/factcheck ~/.claude/skills/factcheck
 ```
 
 2. Claude に「この記事をファクトチェックして」「この情報の信頼性を評価して」と頼む
